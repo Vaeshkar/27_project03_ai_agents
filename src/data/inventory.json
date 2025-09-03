@@ -1,0 +1,69 @@
+{
+  "products": {
+    "lego-creator-deep-sea": {
+      "id": "lego-creator-deep-sea",
+      "name": "LEGO Creator 3-in-1 Deep Sea Creatures",
+      "price": 19.99,
+      "stock": 12,
+      "category": "building",
+      "age_range": "7-12",
+      "description": "Build and play with 3 different deep sea creatures"
+    },
+    "playmobil-castle": {
+      "id": "playmobil-castle",
+      "name": "Playmobil Medieval Castle",
+      "price": 129.99,
+      "stock": 3,
+      "category": "roleplay",
+      "age_range": "4-10",
+      "description": "Complete castle playset with knights and accessories"
+    },
+    "monopoly-classic": {
+      "id": "monopoly-classic",
+      "name": "Monopoly Classic Board Game",
+      "price": 34.99,
+      "stock": 8,
+      "category": "board-games",
+      "age_range": "8+",
+      "description": "The classic property trading game"
+    },
+    "lego-technic-car": {
+      "id": "lego-technic-car",
+      "name": "LEGO Technic Racing Car",
+      "price": 199.99,
+      "stock": 2,
+      "category": "building",
+      "age_range": "10+",
+      "description": "Advanced building experience with working mechanisms"
+    },
+    "barbie-dreamhouse": {
+      "id": "barbie-dreamhouse",
+      "name": "Barbie Dreamhouse Playset",
+      "price": 159.99,
+      "stock": 5,
+      "category": "dolls",
+      "age_range": "3-9",
+      "description": "3-story dollhouse with furniture and accessories"
+    },
+    "hot-wheels-track": {
+      "id": "hot-wheels-track",
+      "name": "Hot Wheels Ultimate Garage",
+      "price": 89.99,
+      "stock": 6,
+      "category": "vehicles",
+      "age_range": "4-8",
+      "description": "Multi-level garage with car elevator and shark attack"
+    }
+  },
+  "store_info": {
+    "name": "Toy Corner",
+    "location": "Alphen aan den Rijn",
+    "phone": "+31 123 456 789",
+    "email": "orders@toycorner.nl",
+    "currency": "EUR",
+    "tax_rate": 0.21,
+    "shipping_cost": 4.95,
+    "free_shipping_threshold": 50.0,
+    "opening_hours": "Monday to Friday: 9:00 - 18:00"
+  }
+}
