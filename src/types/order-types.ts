@@ -67,3 +67,15 @@ export interface OrderRequest {
   }>;
   action?: "check" | "reserve" | "complete";
 }
+
+export interface StoreInfo {
+  name: string;
+  location: string;
+  phone: string;
+  email: string;
+  currency: string;
+  tax_rate: number;
+  shipping_cost: number;
+  free_shipping_threshold: number;
+  opening_hours?: Product;
+}

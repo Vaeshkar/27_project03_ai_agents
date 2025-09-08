@@ -8,6 +8,7 @@ import {
   OrderSummary,
   StockCheckResult,
   InventoryResponse,
+  StoreInfo,
 } from "../types/order-types";
 
 interface InventoryData {
@@ -251,7 +252,7 @@ export class InventoryAgent {
   }
 
   // Get store information
-  public getStoreInfo() {
+  public getStoreInfo(): StoreInfo | null {
     return this.inventoryData?.store_info || null;
   }
 }

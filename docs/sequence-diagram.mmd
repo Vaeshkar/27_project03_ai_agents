@@ -1,0 +1,67 @@
+sequenceDiagram
+    participant User
+    participant API as Express API
+    participant ORC as OpenAI Orchestrator
+    participant OAI as OpenAI API
+    participant INV as Inventory Agent
+    participant COM as Communication Agent
+    participant UPD as Update Agent
+    participant FS as File System
+
+    Note over User, FS: AI Order Management System Flow
+
+    User->>API: POST /api/agent {"prompt": "I want to order 2 LEGO sets"}
+    API->>API: Validate request with Zod
+
+    API->>ORC: processOrderRequest(prompt)
+    Note over ORC: Analyze request intent
+
+    ORC->>OAI: chat.completions.create() with tools
+    Note over OAI: AI determines needed functions
+
+    OAI-->>ORC: Response with tool_calls: ["check_inventory"]
+
+    Note over ORC: Execute function calls
+
+    ORC->>INV: handleCheckInventory(items)
+    INV->>FS: Load inventory.json
+    FS-->>INV: Product data
+
+    INV->>INV: Find products by query
+    INV->>INV: Check stock availability
+    INV->>INV: Calculate pricing & taxes
+    INV-->>ORC: {success: true, order_summary: {...}}
+
+    ORC->>COM: handleGenerateEmail(order_summary)
+    COM->>COM: Generate confirmation email
+    COM-->>ORC: {success: true, email: {...}}
+
+    ORC->>OAI: Send function results for final response
+    OAI-->>ORC: Natural language response
+
+    ORC-->>API: {result, order_summary, email_content, metadata}
+
+    API-->>User: JSON response with order details
+
+    Note over User: Optional: User confirms order
+
+    opt Order Confirmation
+        User->>API: POST /api/agent {"prompt": "CONFIRM ORDER"}
+        API->>ORC: processOrderRequest("CONFIRM ORDER")
+        ORC->>OAI: Analyze confirmation intent
+        OAI-->>ORC: tool_calls: ["update_inventory", "generate_email"]
+
+        ORC->>UPD: handleUpdateInventory(reserve, order_summary)
+        UPD->>FS: Update inventory.json
+        UPD->>FS: Reduce stock quantities
+        FS-->>UPD: Success
+        UPD-->>ORC: {success: true, updated_products: [...]}
+
+        ORC->>COM: Generate shipping confirmation
+        COM-->>ORC: Shipping email content
+
+        ORC-->>API: Order placed confirmation
+        API-->>User: Order completed response
+    end
+
+    Note over User, FS: All interactions logged with token usage
