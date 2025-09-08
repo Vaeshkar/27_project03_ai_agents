@@ -4,9 +4,9 @@ A sophisticated multi-agent AI system for processing orders and managing invento
 
 ## 🏪 Business Context
 
-Company: Toy Corner (Fictitious)
-Location: Alphen aan den Rijn, Netherlands
-Purpose: Demonstrate AI-powered customer service and order processing for small retail businesses
+- Company: Toy Corner (Fictitious)
+- Location: Alphen aan den Rijn, Netherlands
+- Purpose: Demonstrate AI-powered customer service and order processing for small retail businesses
 
 ## 🤖 System Architecture
 
@@ -71,22 +71,17 @@ This system uses OpenAI's function calling capabilities to coordinate multiple s
 ```bash
 
 # Clone the repository
-
 git clone [repository-url]
 cd ai-order-management-system
 
 # Install dependencies
-
 npm install
 
 # Set up environment variables
-
 cp .env.example .env
 
 # Edit .env with your OpenAI API key
-
 # Build and start
-
 npm run build
 npm run dev
 ```
@@ -161,25 +156,21 @@ System information and usage examples.
 ```bash
 
 # Check product availability
-
 curl -X POST http://localhost:3000/api/agent \
  -H "Content-Type: application/json" \
  -d '{"prompt": "Do you have any LEGO sets in stock?"}'
 
 # Place an order
-
 curl -X POST http://localhost:3000/api/agent \
  -H "Content-Type: application/json" \
  -d '{"prompt": "I want to order 3 Playmobil castles"}'
 
 # Ask for store information
-
 curl -X POST http://localhost:3000/api/agent \
  -H "Content-Type: application/json" \
  -d '{"prompt": "What are your store hours?"}'
 
 # Check system status
-
 curl http://localhost:3000/api/status
 ```
 
@@ -221,70 +212,70 @@ src/
 
 ### Environment Switching
 
-Development: Uses local model (LM Studio/Ollama) on localhost:1234
-Production: Uses OpenAI API
+- Development: Uses local model (LM Studio/Ollama) on localhost:1234
+- Production: Uses OpenAI API
 
 ### Build Pipeline
 
-Automatic TypeScript compilation
-Data file copying to build directory
-Environment variable loading via npm scripts
-Concurrent development with hot reload
+- Automatic TypeScript compilation
+- Data file copying to build directory
+- Environment variable loading via npm scripts
+- Concurrent development with hot reload
 
 ### Input Validation
 
-Zod schemas for request validation
-Runtime type checking
-Comprehensive error handling
+- Zod schemas for request validation
+- Runtime type checking
+- Comprehensive error handling
 
 ## 📈 Business Applications
 
 This system can be adapted for various small businesses:
 
-Toy Stores: Product inquiries and order processing
-Bookstores: Book recommendations and availability
-Hardware Stores: Tool and supply management
-Cafes/Restaurants: Menu inquiries and ordering
-Clothing Boutiques: Style advice and inventory
+- Toy Stores: Product inquiries and order processing
+- Bookstores: Book recommendations and availability
+- Hardware Stores: Tool and supply management
+- Cafes/Restaurants: Menu inquiries and ordering
+- Clothing Boutiques: Style advice and inventory
 
 ## 🤝 Contributing
 
 This is a learning project demonstrating AI integration patterns. Key concepts covered:
 
-Multi-agent AI architecture
-OpenAI function calling
-TypeScript with Express
-Business logic separation
-Professional API design
+- Multi-agent AI architecture
+- OpenAI function calling
+- TypeScript with Express
+- Business logic separation
+- Professional API design
 
 ## 📋 Requirements Fulfilled
 
-✅ FR001-FR007: Express + TypeScript foundation
-✅ FR008: OpenAI Agents SDK integration
-✅ FR009: Orchestrator agent implementation
-✅ FR010: Multiple specialized agents (3+)
-✅ FR011: Tool functions with external capabilities
-✅ FR012: Local/production model switching
-✅ FR013: Fictitious company scenario
-✅ FR014: UML sequence diagram
-✅ FR015: Documentation integration
-✅ FR016: Comprehensive documentation
+- ✅ FR001-FR007: Express + TypeScript foundation
+- ✅ FR008: OpenAI Agents SDK integration
+- ✅ FR009: Orchestrator agent implementation
+- ✅ FR010: Multiple specialized agents (3+)
+- ✅ FR011: Tool functions with external capabilities
+- ✅ FR012: Local/production model switching
+- ✅ FR013: Fictitious company scenario
+- ✅ FR014: UML sequence diagram
+- ✅ FR015: Documentation integration
+- ✅ FR016: Comprehensive documentation
 
 ## 📊 Performance Metrics
 
-Average Response Time: 1-3 seconds
-Token Usage: 300-800 tokens per request
-Success Rate: High accuracy in product matching
-Scalability: Handles multiple concurrent requests
+- Average Response Time: 1-3 seconds
+- Token Usage: 300-800 tokens per request
+- Success Rate: High accuracy in product matching
+- Scalability: Handles multiple concurrent requests
 
 ## 🔮 Future Enhancements
 
-Database integration (PostgreSQL/MongoDB)
-Payment processing integration
-Multi-store support
-Advanced analytics dashboard
-Mobile app connectivity
-Real-time inventory synchronization
+- Database integration (PostgreSQL/MongoDB)
+- Payment processing integration
+- Multi-store support
+- Advanced analytics dashboard
+- Mobile app connectivity
+- Real-time inventory synchronization
 
 ## 📄 License
 
