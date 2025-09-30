@@ -112,8 +112,29 @@ export class InventoryAgent {
 
   // Extract quantity from natural language
   private extractQuantity(query: string): number {
-    const quantityMatch = query.match(/(\d+)\s*x?/i);
-    return quantityMatch ? parseInt(quantityMatch[1]) : 1;
+    // Try digits first
+    const digitMatch = query.match(/(\d+)\s*x?/i);
+    if (digitMatch) return parseInt(digitMatch[1]);
+
+    // Try word numbers
+    const wordNumbers: { [key: string]: number } = {
+      one: 1,
+      two: 2,
+      three: 3,
+      four: 4,
+      five: 5,
+      six: 6,
+      seven: 7,
+      eight: 8,
+      nine: 9,
+      ten: 10,
+    };
+
+    const words = query.toLowerCase().split(" ");
+    for (const word of words) {
+      if (wordNumbers[word]) return wordNumbers[word];
+    }
+    return 1;
   }
 
   // Check stock for a single item

@@ -60,10 +60,10 @@ app.use((req, res) => {
 // Start server
 const PORT = config.port;
 app.listen(PORT, () => {
-  console.log(`🚀 Server running on port ${PORT}`);
-  console.log(`📝 Environment: ${config.nodeEnv}`);
-  console.log(`🔗 Agent endpoint: http://localhost:${PORT}/api/agent`);
-  console.log(`❤️  Health check: http://localhost:${PORT}/health`);
+  console.log(`Server running on port ${PORT}`);
+  console.log(`Environment: ${config.nodeEnv}`);
+  console.log(`Agent endpoint: http://localhost:${PORT}/api/agent`);
+  console.log(`Health check: http://localhost:${PORT}/health`);
 });
 
 export default app;
